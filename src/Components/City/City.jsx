@@ -1,3 +1,4 @@
+import { StartCase } from 'react-lodash';
 import React, { useEffect, useState } from 'react';
 import './City.scss'
 
@@ -24,7 +25,7 @@ const City = ({city, setCity}) => {
 				<img className="icon" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="icon" />
 					</div>
 					<div className="description">
-						<h3 style={{fontSize: "2rem", fontWeight: "100"}} >{city.weather[0].description_.upperFirst()}</h3>
+						<h3 style={{fontSize: "2rem", fontWeight: "100"}}> <StartCase string={city.weather[0].description} /> </h3>
 					</div>
 				</div>
 				<h1 className="temperature">{Math.round(city.main.temp - 273.15) + '°'}</h1>
